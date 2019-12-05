@@ -27,6 +27,10 @@ class Hook
 		    $callback = function() {};
 	    }
 
+	    if( !is_array($params) ) {
+	    	$params = [$params];
+	    }
+
         $callbackObject = $this->createCallbackObject($callback, $params);
 
         $output = $this->returnMockIfDebugModeAndMockExists($hook);
